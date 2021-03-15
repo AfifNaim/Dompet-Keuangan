@@ -24,11 +24,11 @@ class CreateRecurentTable extends Migration
             $table->time('repeat_every');
             $table->timestamps();
 
-            $table->index('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            // $table->index('user_id');
+            // $table->foreign('user_id')->references('id')->on('user');
 
-            $table->index('sub_categorie_id');
-            $table->foreign('sub_categorie_id')->references('id')->on('sub_categorie');
+            // $table->index('sub_categorie_id');
+            // $table->foreign('sub_categorie_id')->references('id')->on('sub_categorie');
         });
     }
 

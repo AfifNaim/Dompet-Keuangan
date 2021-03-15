@@ -20,11 +20,11 @@ class CreateSubCategorieTable extends Migration
             $table->string('name');
             $table->timestamps();
 
-            $table->index('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            // $table->index('user_id');
+            // $table->foreign('user_id')->references('id')->on('user');
 
-            $table->index('categorie_id');
-            $table->foreign('categorie_id')->references('id')->on('categorie');
+            // $table->index('categorie_id');
+            // $table->foreign('categorie_id')->references('id')->on('categorie');
         });
     }
 

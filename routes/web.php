@@ -14,13 +14,16 @@ use App\Http\Controllers\IncomeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', function () {
-    return view('index');
-});
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/test', function () {
+//     return view('index');
+// });
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //CRUD Categorie
 Route::resource('categorie', CategorieController::class);

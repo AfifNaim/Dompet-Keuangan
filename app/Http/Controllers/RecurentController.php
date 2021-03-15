@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Income;
+use App\Models\Recurent;
 use Illuminate\Http\Request;
 
-class IncomeController extends Controller
+class RecurentController extends Controller
 {
     public function index()
     {
-        $income = Income::latest()->paginate(5);
+        $recurent = Recurent::latest()->paginate(5);
 
-        return view('income.index', compact('income')) 
+        return view('recurent.index', compact('recurent')) 
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view('income.create');
+        return view('recurent.create');
     }
 
     public function store(Request $request)
@@ -30,24 +30,24 @@ class IncomeController extends Controller
             'note' => 'required',
         ]);
 
-        Income::create($request->all());
+        Recurent::create($request->all());
 
-        return redirect()->route('income.index')
-            ->with('success', 'Income created successfully.');
+        return redirect()->route('recurent.index')
+            ->with('success', 'Recurent created successfully.');
             
     }
 
-    public function show(Income $income)
+    public function show(Recurent $recurent)
     {
-        return view('income.show', compact('income'));
+        return view('recurent.show', compact('recurent'));
     }
 
-    public function edit(Income $income)
+    public function edit(Recurent $recurent)
     {
-        return view('income.edit', compact('income'));
+        return view('recurent.edit', compact('recurent'));
     }
 
-    public function update(Request $request, Income $income)
+    public function update(Request $request, Recurent $recurent)
     {
 
         $request->validate([
@@ -57,16 +57,16 @@ class IncomeController extends Controller
             'date' => 'required',
             'note' => 'required',
         ]);
-        $income->update($request->all());
+        $recurent->update($request->all());
 
-        return redirect()->route('income.index')
-            ->with('success', 'Income updated successfully');
+        return redirect()->route('recurent.index')
+            ->with('success', 'Recurent updated successfully');
     }
 
-    public function destroy(Income $income)
+    public function destroy(Recurent $recurent)
     {
-        $income->delete();
-        return redirect()->route('income.index')
-                        ->with('sucess', 'Income Deleted Successfully');
+        $recurent->delete();
+        return redirect()->route('recurent.index')
+                        ->with('sucess', 'Recurent Deleted Successfully');
     }
 }

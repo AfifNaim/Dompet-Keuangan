@@ -8,7 +8,7 @@
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('categorie.create') }}" title="Create a categorie"> <i class="fas fa-plus-circle"></i>
-                    </a>
+                    Tambal</a>
             </div>
         </div>
     </div>

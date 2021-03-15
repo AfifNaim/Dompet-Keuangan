@@ -33,7 +33,7 @@ class ExpenseController extends Controller
         Expense::create($request->all());
 
         return redirect()->route('expense.index')
-            ->with('success', 'Income created successfully.');
+            ->with('success', 'Expense created successfully.');
             
     }
 
@@ -60,13 +60,13 @@ class ExpenseController extends Controller
         $expense->update($request->all());
 
         return redirect()->route('expense.index')
-            ->with('success', 'Income updated successfully');
+            ->with('success', 'Expense updated successfully');
     }
 
     public function destroy(Expense $expense)
     {
         $expense->delete();
         return redirect()->route('expense.index')
-                        ->with('sucess', 'Income Deleted Successfully');
+                        ->with('sucess', 'Expense Deleted Successfully');
     }
 }
