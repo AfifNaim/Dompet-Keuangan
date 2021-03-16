@@ -7,7 +7,7 @@
                 <h2>Add New Categorie</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('categorie.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('sub_categorie.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -22,13 +22,25 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('categorie.store') }}" method="POST" >
+    <form action="{{ route('sub_categorie.store') }}" method="POST" >
         @csrf
 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Name:</strong>
+                    <strong>User</strong>
+                    <input type="text" name="user_id" class="form-control" placeholder="User">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Categorie</strong>
+                    <input type="text" name="categorie_id" class="form-control" placeholder="Categorie">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Name</strong>
                     <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
             </div>

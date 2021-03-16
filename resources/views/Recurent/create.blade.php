@@ -7,7 +7,7 @@
                 <h2>Add New Income</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('income.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('recurent.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('income.store') }}" method="POST" >
+    <form action="{{ route('recurent.store') }}" method="POST" >
         @csrf
 
         <div class="row">
@@ -40,20 +40,32 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Name</strong>
+                    <input type="text" name="name" class="form-control" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Amount</strong>
                     <input type="number" name="amount" class="form-control" placeholder="Amount">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Date</strong>
-                    <input type="date" name="date" class="form-control" placeholder="Date">
+                    <strong>Start Date</strong>
+                    <input type="date" name="start_date" class="form-control" placeholder="Start Date">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Note</strong>
-                    <input type="text" name="note" class="form-control" placeholder="Note">
+                    <strong>Reminder</strong>
+                    <input type="text" name="reminder" class="form-control" placeholder="Reminder">
+                </div>
+            </div>
+             <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Repeat Every</strong>
+                    <input type="text" name="repeat_every" class="form-control" placeholder="Start Date">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

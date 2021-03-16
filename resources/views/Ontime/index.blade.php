@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Income</h2>
+                <h2>Ontime</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('income.create') }}" title="Create a categorie"> <i class="fas fa-plus-circle"></i>
+                <a class="btn btn-success" href="{{ route('ontime.create') }}" title="Create a categorie"> <i class="fas fa-plus-circle"></i>
                     </a>
             </div>
         </div>
@@ -26,22 +26,22 @@
             <th>Kategori</th>
             <th>Amount</th>
             <th>Tanggal</th>
-            <th>Note</th>
+            <th>Reminder</th>
         </tr>
-        @foreach ($income as $income)
+        @foreach ($ontime as $ontime)
             <tr>
                 <td>1</td>
-                <td>{{ $income->user_id }}</td>
-                <td>{{ $income->sub_categorie_id }}</td>
-                <td>{{ $income->amount }}</td>
-                <td>{{ $income->date }}</td>
-                <td>{{ $income->note }}</td>
+                <td>{{ $ontime->user_id }}</td>
+                <td>{{ $ontime->sub_categorie_id }}</td>
+                <td>{{ $ontime->amount }}</td>
+                <td>{{ $onitme->date }}</td>
+                <td>{{ $ontime->reminder }}</td>
                 <td>
-                    <form action="{{ route('income.destroy',$income->id) }}" method="POST">
+                    <form action="{{ route('ontime.destroy',$ontime->id) }}" method="POST">
 
-                        <a class="btn btn-info btn-sm" href="{{ route('income.show',$income->id) }}">Show</a>
+                        <a class="btn btn-info btn-sm" href="{{ route('ontime.show',$ontime->id) }}">Show</a>
 
-                         <a class="btn btn-primary btn-sm" href="{{ route('income.edit',$income->id) }}">Edit</a>
+                         <a class="btn btn-primary btn-sm" href="{{ route('ontime.edit',$ontime->id) }}">Edit</a>
 
                         @csrf
                         @method('DELETE')

@@ -7,7 +7,7 @@
                 <h2>Add New Income</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('income.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('ontime.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="{{ route('income.store') }}" method="POST" >
+    <form action="{{ route('ontime.store') }}" method="POST" >
         @csrf
 
         <div class="row">
@@ -52,8 +52,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Note</strong>
-                    <input type="text" name="note" class="form-control" placeholder="Note">
+                    <strong>Reminder</strong>
+                    <input type="text" name="reminder" class="form-control" placeholder="Reminder">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

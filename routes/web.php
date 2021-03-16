@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\OntimeController;
+use App\Http\Controllers\RecurentController;
+use App\Http\Controllers\Sub_CategorieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +25,9 @@ use App\Http\Controllers\IncomeController;
 //     return view('welcome');
 // });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //CRUD Categorie
 Route::resource('categorie', CategorieController::class);
@@ -33,3 +37,14 @@ Route::resource('income', IncomeController::class);
 
 //CRUD Expense
 Route::resource('expense', ExpenseController::class);
+
+//CRUD Ontime
+Route::resource('ontime', OntimeController::class);
+
+//CRUD Recurent
+Route::resource('recurent', RecurentController::class);
+
+//CRUD Sub Categorie
+Route::resource('sub_categorie', Sub_CategorieController::class);
+
+
