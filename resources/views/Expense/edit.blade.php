@@ -1,18 +1,16 @@
-@extends('layouts.app')
+@extends('Layout.base')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
+    <div class="main-content">
+        <div class="section">
+            <div section="section-header">
                 <h2>Edit Expense</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('expense.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
-        </div>
-    </div>
-
-    @if ($errors->any())
+        </section>
+        @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Error!</strong>
             <ul>
@@ -22,7 +20,6 @@
             </ul>
         </div>
     @endif
-
     <form action="{{ route('expense.update',$expense->id) }}" method="POST">
         @csrf
         @method('PUT')
@@ -54,6 +51,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-
     </form>
+    </div>
 @endsection

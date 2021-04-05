@@ -7,6 +7,21 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\OntimeController;
 use App\Http\Controllers\RecurentController;
 use App\Http\Controllers\Sub_CategorieController;
+use App\Http\Controllers\AuthController;
+
+//Login Route
+Route::get('login', 'App\Http\Controllers\AuthController@index')->name('login');
+Route::post('proses_login', 'App\Http\Controllers\AuthController@proses_login')->name('proses_login');
+Route::get('logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::group(['middleware' => ['cek_login:admin']], function () {
+    	/*
+    		Route Khusus untuk role admin
+    	*/
+        Route::resource('admin', AdminController::class);
+    });
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +33,9 @@ use App\Http\Controllers\Sub_CategorieController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/test', function () {
-//     return view('index');
-// });
+Route::get('/', function () {
+    return view('Layout/base');
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });

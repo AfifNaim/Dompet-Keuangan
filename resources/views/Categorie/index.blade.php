@@ -1,23 +1,21 @@
-@extends('layouts.app')
+@extends('Layout.base')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
                 <h2>Categorie</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{ route('categorie.create') }}" title="Create a categorie"> <i class="fas fa-plus-circle"></i>
-                    Tambal</a>
+                    Tambah</a>
             </div>
-        </div>
-    </div>
-
-    @if ($message = Session::get('success'))
+        </section>
+        {{-- @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p></p>
         </div>
-    @endif
+    @endif --}}
 
     <table class="table table-bordered table-responsive-lg">
         <tr>
@@ -46,6 +44,6 @@
             </tr>
         @endforeach
     </table>
-
+    </div>
 
 @endsection
