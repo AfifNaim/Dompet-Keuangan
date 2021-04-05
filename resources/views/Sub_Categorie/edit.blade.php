@@ -1,18 +1,17 @@
-@extends('layouts.app')
+@extends('Layout.base')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
+    <div class="main-content">
+        <div class="section">
+            <div section="section-header">
                 <h2>Edit Categorie</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('sub_categorie.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
-        </div>
+        </section>
     </div>
-
-    @if ($errors->any())
+     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Error!</strong>
             <ul>

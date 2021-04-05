@@ -1,18 +1,16 @@
-@extends('layouts.app')
+@extends('Layout.base')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
                 <h2>Add New Expense</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('expense.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
-        </div>
-    </div>
-
-    @if ($errors->any())
+        </section>
+        @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Error!</strong> 
             <ul>
@@ -60,6 +58,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-
     </form>
+    </div>
 @endsection
